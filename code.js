@@ -1,26 +1,54 @@
 const GRID_MEASURE = 660;
 const INITIAL_DIM = 8;
 const grids = document.querySelector(".grids");
-const button = document.querySelector("button");
+const clean = document.querySelector(".clean");
+const normal = document.querySelector(".normal");
+const rgb = document.querySelector(".rgb");
 let input = document.querySelector("input");
-let dim = 8;
+let dim = INITIAL_DIM;
+let mode = "normal";  
 
 // Create the initial grid
 createGrid(INITIAL_DIM);
 
-// Listen for input changes
-input.addEventListener("input", changeGrids);
-button.addEventListener("click",  resetGrids);
+// Listen for mode change
+normal.addEventListener("click", () => {
+    mode = 'normal';  // Set mode to normal
+    resetGrids();
+});
+rgb.addEventListener("click", () => {
+    mode = 'rgb';  // Set mode to RGB
+    resetRGBGrids();
+});
 
-function changeGrids(e) {
+// Listen for input changes (dimension changes) - only attach once
+input.addEventListener("input", (e) => {
     dim = e.target.value;
-    grids.innerHTML = '';  // This removes all child elements
+    if (mode === 'normal') {
+        changeGrids();
+    } else if (mode === 'rgb') {
+        changeGridsRGB();
+    }
+});
+
+function changeGrids() {
+    grids.innerHTML = '';  
     createGrid(dim);
 }
 
+function changeGridsRGB() {
+    grids.innerHTML = '';  
+    createRGBGrids(dim);
+}
+
 function resetGrids() {
-    grids.innerHTML = '';  // This removes all child elements
+    grids.innerHTML = '';  
     createGrid(dim);
+}
+
+function resetRGBGrids() {
+    grids.innerHTML = '';  
+    createRGBGrids(dim);
 }
 
 function createGrid(dim) {
@@ -28,7 +56,6 @@ function createGrid(dim) {
         const grid = document.createElement("div");
         grid.classList.add("grid");
 
-        // Set background-color, width, and height
         grid.style.backgroundColor = "white";
         grid.style.width = `${GRID_MEASURE / dim}px`;
         grid.style.height = `${GRID_MEASURE / dim}px`;
@@ -38,13 +65,27 @@ function createGrid(dim) {
             grid.style.backgroundColor = "black";
         });
 
-    
         grids.appendChild(grid);
     }
 }
 
+function createRGBGrids(dim) {
+    for (let i = 1; i <= dim * dim; i++) {
+        const grid = document.createElement("div");
+        grid.classList.add("grid");
 
+        grid.style.backgroundColor = "white";
+        grid.style.width = `${GRID_MEASURE / dim}px`;
+        grid.style.height = `${GRID_MEASURE / dim}px`;
+        grid.style.outline = "solid 1px black";
 
+        grid.addEventListener('mouseover', () => {
+            let x = Math.floor(Math.random() * 255);
+            let y = Math.floor(Math.random() * 255);
+            let z = Math.floor(Math.random() * 255);
+            grid.style.backgroundColor = `rgb(${x},${y},${z})`;
+        });
 
-
-
+        grids.appendChild(grid);
+    }
+}
