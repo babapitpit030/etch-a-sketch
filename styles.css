@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(235, 222, 156);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100vh;
+    padding-top: 3px;
+}
+
+button {
+
+    width: 5em;
+    height: 3em;
+    border-radius: 12px;
+    background-color: rgb(235, 222, 156);
+    font-size: 14px;
+}
+
+
+.grids {
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    height: 660px;
+    width: 660px;
+}
+
+.text {
+
+    color: black;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 32px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
