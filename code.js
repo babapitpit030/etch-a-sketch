@@ -1,4 +1,4 @@
-const GRID_MEASURE = 440;
+const GRID_MEASURE = 500;
 const INITIAL_DIM = 8;
 const grids = document.querySelector(".grids");
 const clean = document.querySelector(".clean");

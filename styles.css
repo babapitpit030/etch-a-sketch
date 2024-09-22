@@ -11,6 +11,7 @@ body {
     align-items: center;
     height: 100vh;
     padding-top: 3px;
+    gap: 2em;
 }
 
 button {
@@ -39,8 +40,8 @@ button {
     background-color: aliceblue;
     display: flex;
     flex-wrap: wrap;
-    height: 440px;
-    width: 440px;
+    height: 500px;
+    width: 500px;
     outline: 2px rgb(133, 122, 64);
 }
 
