@@ -1,7 +1,13 @@
+/* * {
+
+    outline: solid 2px red;
+} */
+
+
 body {
     background-color: rgb(235, 222, 156);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     padding-top: 3px;
@@ -23,13 +29,19 @@ button {
 
 }
 
+.slider-text {
+    color: black;
+    font-size: 18px;
+}
+
 
 .grids {
     background-color: aliceblue;
     display: flex;
     flex-wrap: wrap;
-    height: 660px;
-    width: 660px;
+    height: 440px;
+    width: 440px;
+    outline: 2px rgb(133, 122, 64);
 }
 
 .text {
@@ -52,5 +64,14 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+}
+
+.left-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
 }

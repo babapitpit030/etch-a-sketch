@@ -9,14 +9,18 @@
 </head>
 <body>
     <div class="left">
-        <h1 class="text">Etch-a-sketch by Youssef Hossainian</h1>
-        <input placeholder="Grid-dimension (max 100)" class="gridInput" size="25" />
-    </div>
-    <div class="right">
-        <div class="buttons">
+        <div class="left-top">
+            <p class="slider-text"></p>
+            <input type="range" min="1" max="100" value="16" class="slider">
+        </div>
+        <div class="buttons"></div>
             <button class="normal">normal mode</button>
             <button class="rgb">rgb mode</button>
+            <button class="eraser">eraser</button>
         </div>
+    </div>
+    <div class="right">
+        <h1 class="text">Etch-a-sketch by Youssef Hossainian</h1>
         <div class="grids">
         </div>
     </div>
