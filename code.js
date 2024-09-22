@@ -17,7 +17,7 @@ createGrid(INITIAL_DIM);
 // give the dimensions of the grid above the slider
 
 input.addEventListener("input", (e) => { 
-    slider_text.textContent = `${e.target.value} by ${e.target.value}`;
+    slider_text.textContent = `${e.target.value}x${e.target.value}`;
 })
 
 // Listen for mode change
